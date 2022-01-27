@@ -53,6 +53,16 @@ imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+" quick semi
+nnoremap <Leader>; $a;<Esc>     " ; al final de la linea
+nnoremap <Leader>: $a:<Esc>     " : al final de la linea
+
+" faster search
+nmap <Leader>s <Plug>(easymotion-s2)
+
+"run current file
+"nnoremap <Leader>xn :!node %<CR>        " ejecuta el archivo actual en node
+"nnoremap <Leader>xp :!python %<CR>      " ejecuta el archivo actual en python
 
 " shift+arrow selection
 nmap <S-Up> v<Up>
@@ -151,6 +161,8 @@ inoremap <C-S-v> <ESC>:call XPaste()<CR>a
 " save with ctrl+s
 :nmap <C-s> :w<CR>
 :imap <C-s> <ESC>:w<CR>a
+nnoremap <Leader>w :w<CR>   "guardar
+nnoremap <Leader>q :q<CR>   "salir
 
 
 function! XPaste()

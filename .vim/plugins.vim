@@ -26,7 +26,7 @@ Plug 'shinchu/lightline-gruvbox.vim'
 "Plug 'vim-airline/vim-airline'
 
 "tree
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -41,6 +41,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "ide
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
+Plug 'easymotion/vim-easymotion'
 
 
 call plug#end()

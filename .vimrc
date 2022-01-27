@@ -26,6 +26,7 @@ set autoindent
 so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim
 so ~/.vim/maps.vim
+so ~/.vim/exe_current_file.vim
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
