@@ -24,7 +24,8 @@ set smartindent
 set autoindent
 
 so ~/.vim/plugins.vim
-so ~/.vim/plugin-config.vim
+so ~/.vim/plugins-maps.vim
+so ~/.vim/plugins-config.vim
 so ~/.vim/maps.vim
 so ~/.vim/exe_current_file.vim
 
