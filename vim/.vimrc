@@ -1,3 +1,4 @@
+let g:VIMRC_PATH = '~/dotfiles/vim'
 set number
 set relativenumber
 set mouse=a             "enable mouse interactions
@@ -12,7 +13,7 @@ set fileformat=unix
 set noswapfile          " no create swapfiles
 set nobackup            " no backup, use git
 set backspace=indent,eol,start
-set undodir=~/.vim/undodir
+execute 'set undodir=' . expand(g:VIMRC_PATH . '/undodir')
 set undofile
 set showmatch
 set sw=2
@@ -23,15 +24,22 @@ set viminfo='25,\"50,n~/.viminfo    "archivo historial linea de comandos
 set smartindent
 set autoindent
 
-so ~/.vim/plugins.vim
-so ~/.vim/plugins-maps.vim
-so ~/.vim/plugins-config.vim
-so ~/.vim/maps.vim
-so ~/.vim/exe_current_file.vim
+execute 'source ' . expand(g:VIMRC_PATH . '/plugins.vim')
+execute 'source ' . expand(g:VIMRC_PATH . '/plugins-maps.vim')
+execute 'source ' . expand(g:VIMRC_PATH . '/plugins-config.vim')
+execute 'source ' . expand(g:VIMRC_PATH . '/maps.vim')
+execute 'source ' . expand(g:VIMRC_PATH . '/exe_current_file.vim')
 
+" colorscheme
+if empty(glob('~/.vim/plugged/gruvbox'))
+  echo "Installing gruvbox colorscheme..."
+  silent !git clone https://github.com/morhetz/gruvbox.git ~/.vim/plugged/gruvbox
+  execute 'source ~/.vim/plugged/gruvbox/colors/gruvbox.vim'
+endif
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
-set laststatus=2    "always show statusbar
+
+set laststatus=2    " always show statusbar
 set noshowmode
 
 """ searching
@@ -69,3 +77,5 @@ set foldlevel=99
 
 " restore place in file from previous session
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+nnoremap <C-a> ggVG " Map Ctrl+a to select all text in normal mode
