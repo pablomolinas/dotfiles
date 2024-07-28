@@ -11,14 +11,20 @@ echo "Enlaces simbólicos creados para .gitconfig y .vimrc"
 
 # Añadir entrada a .bashrc si no existe
 BASHRC=~/.bashrc
-CUSTOM_BASHRC_ENTRY="if [ -f ~/dotfiles/custom_bashrc ]; then
-    . ~/dotfiles/bashconfig/.bashconfig
-fi"
+BASHCONFIG_PATH=$DOTFILES_DIR/bashconfig/.bashconfig
 
 # Verificar si la entrada ya existe en .bashrc
-if ! grep -q "dotfiles/custom_bashrc" "$BASHRC"; then
-    echo "$CUSTOM_BASHRC_ENTRY" >> "$BASHRC"
+if ! grep -q "dotfiles/bashconfig" $BASHRC; then
+    echo "" >> "$BASHRC"
+    echo "" >> "$BASHRC"
+    echo 'if [ -f '"$BASHCONFIG_PATH"' ]; then' >> $BASHRC
+    echo '    . '"$BASHCONFIG_PATH" >> $BASHRC
+    echo 'fi' >> $BASHRC
     echo "Entrada para incluir .bashconfig añadida a .bashrc"
 else
     echo "La entrada para incluir .bashconfig ya existe en .bashrc"
 fi
+
+# Reload .bashrc
+source "$BASHRC"
+echo ".bashrc reloaded"
