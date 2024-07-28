@@ -1,0 +1,27 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias cls='clear'
+
+# Crear un directorio y cambiar a él
+mkcd() {
+    mkdir -p "$1"
+    cd "$1"
+}
+
+# Buscar archivos por nombre
+f() {
+    find . -name "$1"
+}
+
+# Habilitar colores para ls y grep
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+alias grep='grep --color=auto'
+
+# Prompt con el nombre de usuario, host y directorio actual
+export PS1='\u@\h:\w\$ '
+
+# Editor de texto predeterminado
+export EDITOR='vim'

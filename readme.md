@@ -42,6 +42,15 @@ Esto creará enlaces simbólicos para `.gitconfig` y `.vimrc` en tu directorio h
 
 Puedes personalizar estos archivos de configuración según tus necesidades. Simplemente edita los archivos en el repositorio y vuelve a ejecutar el script `setup_dotfiles.sh` para aplicar los cambios.
 
+### Configuración de Bash
+
+El script `setup_dotfiles.sh` añadirá la siguiente entrada para incluir alias o personalizaciones a tu archivo `.bashrc` si no existe:
+
+```sh
+if [ -f ~/dotfiles/custom_bashrc ]; then
+    . ~/dotfiles/bashconfig/.bashconfig
+fi
+
 ## Contribuciones
 
 Si deseas contribuir a este repositorio, por favor abre un issue o envía un pull request con tus cambios.
