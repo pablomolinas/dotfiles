@@ -20,8 +20,5 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 alias grep='grep --color=auto'
 
-# Prompt con el nombre de usuario, host y directorio actual
-export PS1='\u@\h:\w\$ '
-
 # Editor de texto predeterminado
 export EDITOR='vim'

@@ -18,7 +18,7 @@
     plr = pull --rebase
     ps = push
     aliases = config --global --get-regexp alias
+    userconfig = config --get-regexp user
 
-[user]
-    name = Pablo
-    email = pablo.molinas@yahoo.com
+[include]
+    path = ~/dotfiles/gitconfig/.gitconfig.user

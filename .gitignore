@@ -2,3 +2,5 @@
 vim/plugged
 vim/.netrwhist
 vim/undodir
+
+gitconfig/.gitconfig.user

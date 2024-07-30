@@ -25,6 +25,10 @@ else
     echo "La entrada para incluir .bashconfig ya existe en .bashrc"
 fi
 
+$DOTFILES_DIR/bash/set_gitconfig.user.sh
+
 # Reload .bashrc
 source "$BASHRC"
 echo ".bashrc reloaded"
+echo ""
+echo "Configuración completada"
