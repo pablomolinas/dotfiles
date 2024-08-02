@@ -21,4 +21,7 @@
     userconfig = config --get-regexp user
 
 [include]
+    path = ~/dotfiles/gitconfig/.gitconfig.aliasesSO
+
+[include]
     path = ~/dotfiles/gitconfig/.gitconfig.user
