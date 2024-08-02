@@ -1,1 +1,2 @@
-type
+@echo off
+type %1

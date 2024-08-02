@@ -1,22 +1,22 @@
 [alias]
-    co = checkout
+    co  = checkout
     cob = checkout -b
-    br = branch
-    cm = commit -m
+    br  = branch
+    cm  = commit -m
     cma = commit --amend 
-    st = status
-    lg = log --oneline --decorate --all
+    st  = status
+    lg  = log --oneline --decorate --all
     rsts = reset --soft HEAD~1
-    ss = stash save
+    ss  = stash save
     sl = stash list
     sa = stash apply
     sp = stash pop
     sc = stash clear
     cp = cherry-pick
     pl = pull
-    plro = pull --rebase origin
-    plr = pull --rebase
-    ps = push
+    plro    = pull --rebase origin
+    plr     = pull --rebase
+    ps      = push
     aliases = config --global --get-regexp alias
     userconfig = config --get-regexp user
 
