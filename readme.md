@@ -4,13 +4,18 @@ Este repositorio contiene mis archivos de configuración personales (dotfiles) p
 
 ## Contenido
 
-- `.gitconfig`: Configuración global de Git.
+- `.gitconfig`: Configuración global de Git, agrega algunos alias utiles.
 - `.vimrc`: Configuración de Vim.
-- `setup_dotfiles.sh`: Script para crear enlaces simbólicos de los archivos de configuración en el directorio home.
+- `setup_dotfiles.sh`: Script para crear enlaces simbólicos de los archivos de configuración en el directorio home en Linux.
+- `setup_dotfiles.bat`: Script para configurar los dotfiles en Windows y agregar una carpeta al PATH en Windows.
+
+Al ejecutar el script en tu SO corresepondiente solicita Nombre e Email para agregarlos a la configuracion de git local.
 
 ## Instalación
 
-Para configurar tu entorno con estos dotfiles, sigue los siguientes pasos:
+### En Linux
+
+Para configurar tu entorno con estos dotfiles en Linux, sigue los siguientes pasos:
 
 1. Clona este repositorio en tu directorio home o en cualquier otro lugar que prefieras:
 
@@ -36,25 +41,32 @@ Para configurar tu entorno con estos dotfiles, sigue los siguientes pasos:
     ./setup_dotfiles.sh
     ```
 
-Esto creará enlaces simbólicos para `.gitconfig` y `.vimrc` en tu directorio home, apuntando a los archivos en el repositorio.
+### En Windows
 
-## Personalización
+Para configurar tu entorno con estos dotfiles en Windows, sigue los siguientes pasos:
 
-Puedes personalizar estos archivos de configuración según tus necesidades. Simplemente edita los archivos en el repositorio y vuelve a ejecutar el script `setup_dotfiles.sh` para aplicar los cambios.
+1. Clona este repositorio en tu directorio home o en cualquier otro lugar que prefieras:
 
-### Configuración de Bash
+    ```sh
+    git clone https://github.com/tu_usuario/dotfiles.git %USERPROFILE%\dotfiles
+    ```
 
-El script `setup_dotfiles.sh` añadirá la siguiente entrada para incluir alias o personalizaciones a tu archivo `.bashrc` si no existe:
+2. Navega al directorio del repositorio:
 
-```sh
-if [ -f ~/dotfiles/custom_bashrc ]; then
-    . ~/dotfiles/bashconfig/.bashconfig
-fi
+    ```sh
+    cd %USERPROFILE%\dotfiles
+    ```
 
-## Contribuciones
+3. Asegúrate de que el script `setup_dotfiles.bat` tenga permisos de ejecución:
 
-Si deseas contribuir a este repositorio, por favor abre un issue o envía un pull request con tus cambios.
+    ```bat
+    icacls setup_dotfiles.bat /grant %USERNAME%:F
+    ```
 
-## Licencia
+4. Ejecuta el script para configurar los dotfiles y agregar una carpeta al PATH:
 
-Este proyecto está licenciado bajo la [MIT License](LICENSE).
+    ```bat
+    setup_dotfiles.bat
+    ```
+
+El script `setup_dotfiles.bat` suscribe una carpeta al PATH de Windows para que los algunos alias de comandos linux estén disponibles de forma global. Solicita permisos de administrador.
