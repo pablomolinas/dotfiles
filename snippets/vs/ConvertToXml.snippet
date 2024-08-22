@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>ConvertToXml</Title>
+      <Shortcut>converttoxml</Shortcut>
+      <Description>Convertir una clase a un string XML</Description>
+      <Author>mp</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+        using System.Xml.Serialization;
+        using System.IO;
+
+        public string ConvertToXml<T>(T obj)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            StringWriter writer = new StringWriter();
+            serializer.Serialize(writer, obj);
+            return writer.ToString();
+        }
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

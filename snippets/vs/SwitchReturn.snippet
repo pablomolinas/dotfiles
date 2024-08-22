@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>SwitchReturn</Title>
+      <Shortcut>switchreturn</Shortcut>
+      <Description>Crear un switch que retorna un valor</Description>
+      <Author>mp</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+        $parameterName$ switch
+        {
+            $case1$ => $returnValue1$,
+            $case2$ => $returnValue2$,
+            _ => $defaultValue$
+        };
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
