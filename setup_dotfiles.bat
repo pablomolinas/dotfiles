@@ -41,6 +41,9 @@ set "PATH=%PATH%"
 REM Ejecutar script de configuración de Git
 call %DOTFILES_DIR%\bat\set_gitconfig.user.bat
 
+REM Configurar Claude Code (settings, statusline, agents, skills y plugins)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%DOTFILES_DIR%\claude\setup_claude.ps1"
+
 endlocal
 
 echo.

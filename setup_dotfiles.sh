@@ -27,6 +27,9 @@ fi
 
 $DOTFILES_DIR/bash/set_gitconfig.user.sh
 
+# Configurar Claude Code (settings, statusline, agents, skills y plugins)
+bash $DOTFILES_DIR/claude/setup_claude.sh
+
 # Reload .bashrc
 source "$BASHRC"
 echo ".bashrc reloaded"

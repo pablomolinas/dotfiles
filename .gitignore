@@ -5,3 +5,5 @@ vim/undodir
 
 gitconfig/.gitconfig.user
 gitconfig/.gitconfig.aliasesSO
+
+claude/skills/*/config.json

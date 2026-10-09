@@ -1,0 +1,11 @@
+# Plugins de Claude Code a instalar (scope user), formato plugin@marketplace.
+# Los marketplaces se declaran con la linea "marketplace <source>" (repo de GitHub, URL o ruta).
+# Si agregas un plugin aca, habilitalo tambien en settings.json -> enabledPlugins.
+
+marketplace anthropics/claude-plugins-official
+
+azure@claude-plugins-official
+context7@claude-plugins-official
+sentry@claude-plugins-official
+postman@claude-plugins-official
+skill-creator@claude-plugins-official
